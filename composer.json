@@ -19,10 +19,5 @@
 		}
 	},
 	"target-dir" : "Daminoushka/SimpleJQueryValidationBundle",
-	"minimum-stability" : "dev",
-	"extra": {
-        "branch-alias": {
-            "dev-master": "master-dev"
-        }
-    }
+	"minimum-stability" : "dev"
 }
