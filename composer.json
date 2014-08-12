@@ -1,22 +1,23 @@
 {
-    "name": "Daminoushka/SimpleJQueryValidationBundle",
-    "type": "symfony-bundle",
-    "description": "Symfony SimpleJQueryValidationBundle",
-    "license": "GPL-3.0+",
-    "authors": [
-        {
-            "name": "Damien Deroussen",
-            "email": "damien.deroussen@gmail.com"
-        }
-    ],
-    "require": {
-            "php": ">=5.3.0",
-            "symfony/framework-bundle": ">=2.3,<2.5-dev",
-            "twig/twig": "*",
-    },
-    "autoload": {
-        "psr-0": { "Daminoushka\\SimpleJQueryValidationBundle": "" }
-    },
-    "target-dir": "Daminoushka/SimpleJQueryValidationBundle",
-    "minimum-stability": "dev"
+	"name" : "Daminoushka/SimpleJQueryValidationBundle",
+	"type" : "symfony-bundle",
+	"description" : "Symfony SimpleJQueryValidationBundle",
+	"license" : "GPL-3.0+",
+	"authors" : [{
+			"name" : "Damien Deroussen",
+			"email" : "damien.deroussen@gmail.com"
+		}
+	],
+	"require" : {
+		"php" : ">=5.3.0",
+		"symfony/framework-bundle" : ">=2.3,<2.5-dev",
+		"twig/twig" : "*"
+	},
+	"autoload" : {
+		"psr-0" : {
+			"Daminoushka\\SimpleJQueryValidationBundle" : ""
+		}
+	},
+	"target-dir" : "Daminoushka/SimpleJQueryValidationBundle",
+	"minimum-stability" : "dev"
 }
