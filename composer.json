@@ -1,5 +1,5 @@
 {
-	"name" : "Daminoushka/SimpleJQueryValidationBundle",
+	"name" : "daminoushka/simple-jquery-validation-bundle",
 	"type" : "symfony-bundle",
 	"description" : "Symfony SimpleJQueryValidationBundle",
 	"license" : "GPL-3.0+",
