@@ -1,0 +1,19 @@
+services:
+    jquery.validator.generator:
+        class: Daminoushka\SimpleJQueryValidationBundle\Generator\RulesGenerator
+        arguments: [  '@service_container' ]
+
+    twig.extension.jqueryvalidate:
+        class: Daminoushka\SimpleJQueryValidationBundle\Twig\JQueryValidateTwigExtension
+        tags:
+            - { name: twig.extension }
+        arguments: [ '@service_container' ]
+    
+    jquery.validator.rules.notblank:
+        class: Daminoushka\SimpleJQueryValidationBundle\Rules\NotBlankRule
+        
+    jquery.validator.rules.greaterthan:
+        class: Daminoushka\SimpleJQueryValidationBundle\Rules\GreaterThanRule
+        
+    jquery.validator.rules.lessthan:
+        class: Daminoushka\SimpleJQueryValidationBundle\Rules\LessThanRule
