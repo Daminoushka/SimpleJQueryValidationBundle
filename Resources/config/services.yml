@@ -17,3 +17,6 @@ services:
         
     jquery.validator.rules.lessthan:
         class: Daminoushka\SimpleJQueryValidationBundle\Rules\LessThanRule
+        
+    jquery.validator.rules.email:
+        class: Daminoushka\SimpleJQueryValidationBundle\Rules\EmailRule

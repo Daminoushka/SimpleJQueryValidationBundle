@@ -69,7 +69,7 @@ class RulesGenerator
             $constraintName = substr(strrchr(get_class($constraint), '\\'), 1);
             
             // Call the corresponding service to get the json encoded rule
-            $serviceName = 'jquery.validator.rules.'.$constraintName;
+            $serviceName = 'jquery.validator.rules.'.strtolower($constraintName);
             
             if ($this->container->has($serviceName)) {
                 $rules[] = $this->container->get($serviceName)->getJSRule($constraint);
