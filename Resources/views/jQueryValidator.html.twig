@@ -1,7 +1,44 @@
 <script type="text/javascript">
+/*****
+ * 
+ * Custom rules
+ * 
+ *****/
+ 
+/**
+ * Greater than
+ */
+jQuery.validator.addMethod('greaterThan', function(value, element, params) {
+	$.validator.messages.greaterThan = params['message'];
+    
+    return value >= params['compared_value'];
+});
+
+/**
+ * Less than
+ */
+jQuery.validator.addMethod('lessThan', function(value, element, params) {
+	$.validator.messages.greaterThan = params['message'];
+    
+    return value <= params['compared_value'];
+});
+
+/**
+ * EqualTo (value version)
+ */
+jQuery.validator.addMethod('equalToValue', function(value, element, params) {
+	$.validator.messages.equalToValue = params['message'];
+
+	return value == params['compared_value'];
+});
+
+
+
 $(document).ready(function() {
     var formId = '{{ form.vars.id }}';
     var form = $('#' + formId);
+
+    
     
     form.validate({
     	onfocusout: function(element) { $(element).valid(); },
