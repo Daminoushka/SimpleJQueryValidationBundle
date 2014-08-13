@@ -20,3 +20,9 @@ services:
         
     jquery.validator.rules.email:
         class: Daminoushka\SimpleJQueryValidationBundle\Rules\EmailRule
+        
+    jquery.validator.rules.length:
+        class: Daminoushka\SimpleJQueryValidationBundle\Rules\LengthRule
+        
+    jquery.validator.rules.url:
+        class: Daminoushka\SimpleJQueryValidationBundle\Rules\UrlRule
