@@ -7,7 +7,6 @@ class EmailRule
     public function getJSRule($constraint)
     {
         $rule = array(
-            'required' => true,
             'email' => true,
             'messages' => array(
                 'required' => $constraint->message,
