@@ -39,6 +39,8 @@ class RulesGenerator
             ->getMetadataFactory()
             ->getMetadataFor($this->entity);
         
+        
+        
         foreach ($metadatas->properties as $property) {
             // Get constraints ready for JS
             $constraints[$property->getName()] = $this->getConstraintsForJS($property->getConstraints());
@@ -65,8 +67,9 @@ class RulesGenerator
         $rules = array();
         
         foreach ($constraints as $constraint) {
-            // Get the constraint name : last word after last "\"
-            $constraintName = substr(strrchr(get_class($constraint), '\\'), 1);
+            $class = new \ReflectionClass($constraint);
+            // Get the constraint name
+            $constraintName = $class->getShortName();
             
             // Call the corresponding service to get the json encoded rule
             $serviceName = 'jquery.validator.rules.'.strtolower($constraintName);
