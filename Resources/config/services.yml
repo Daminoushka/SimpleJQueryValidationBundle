@@ -29,3 +29,6 @@ services:
         
     jquery.validator.rules.equalto:
         class: Daminoushka\SimpleJQueryValidationBundle\Rules\EqualToRule
+        
+    jquery.validator.rules.regex:
+        class: Daminoushka\SimpleJQueryValidationBundle\Rules\RegexRule
