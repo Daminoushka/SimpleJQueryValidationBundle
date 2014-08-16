@@ -10,8 +10,8 @@ class LengthRule
             'minlength' => $constraint->min,
             'maxlength' => $constraint->max,
             'messages' => array(
-                'minlength' => $constraint->minMessage,
-                'maxlength' => $constraint->maxMessage,
+                'minlength' => str_replace('{{ limit }}', $constraint->min, $constraint->minMessage),
+                'maxlength' => str_replace('{{ limit }}', $constraint->max, $constraint->maxMessage),
             )
         );
         

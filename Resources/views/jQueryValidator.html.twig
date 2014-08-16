@@ -45,7 +45,15 @@ $(document).ready(function() {
         {% if constraints[field.vars.name] is defined %}
             {% for constraint in constraints[field.vars.name] %}
                 {% autoescape false %}
-                    {{ '$("#' ~ field.vars.id ~ '").rules("add",' ~ constraint ~ ');' }}
+                    if ($('#{{ field.vars.id }}').length > 0) {
+                        {{ '$("#' ~ field.vars.id ~ '").rules("add",' ~ constraint ~ ');' }}
+                    } else {
+                        // For repeated fields
+                        if ($('#{{ field.vars.id }}_first').length > 0) {
+                        	{{ '$("#' ~ field.vars.id ~ '_first").rules("add",' ~ constraint ~ ');' }}
+                        	{{ '$("#' ~ field.vars.id ~ '_second").rules("add",' ~ constraint ~ ');' }}
+                        }
+                    }
                 {% endautoescape %}
             {% endfor %}
         {% endif %}

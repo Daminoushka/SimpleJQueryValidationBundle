@@ -22,7 +22,7 @@ class JQueryValidateTwigExtension extends \Twig_Extension
     
     public function jQueryValidate($form)
     {
-        $constraints = $this->container->get('jquery.validator.generator')->generateRules(get_class($form->vars['data']));
+        $constraints = $this->container->get('jquery.validator.generator')->generateRules($form);
         
         return $this->container
             ->get('templating')

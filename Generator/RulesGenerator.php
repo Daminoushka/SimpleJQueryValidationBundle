@@ -14,32 +14,25 @@ class RulesGenerator
      */
     protected $container;
     
-    /**
-     * Path to the entity to load validators
-     * 
-     * @var string
-     */
-    protected $entity;
-    
     public function __construct(Container $container)
     {
         $this->container = $container;
     }
     
     /**
-     * Load class metadata and transoform for JS
+     * Load class metadata and transform for JS
      */
-    public function generateRules($entity)
-    {
-        $this->entity = $entity;
+    public function generateRules($form)
+    {        
+        $entity = get_class($form->vars['data']);
         
         // Load class metadata
         $metadatas = $this->container
             ->get('validator')
             ->getMetadataFactory()
-            ->getMetadataFor($this->entity);
+            ->getMetadataFor($entity);
         
-        
+        $constraints = array();
         
         foreach ($metadatas->properties as $property) {
             // Get constraints ready for JS
