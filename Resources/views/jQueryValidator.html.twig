@@ -50,8 +50,9 @@ $(document).ready(function() {
                     } else {
                         // For repeated fields
                         if ($('#{{ field.vars.id }}_first').length > 0) {
-                        	{{ '$("#' ~ field.vars.id ~ '_first").rules("add",' ~ constraint ~ ');' }}
+                                {{ '$("#' ~ field.vars.id ~ '_first").rules("add",' ~ constraint ~ ');' }}
                         	{{ '$("#' ~ field.vars.id ~ '_second").rules("add",' ~ constraint ~ ');' }}
+                                {{ '$("#' ~ field.vars.id ~ '_second").rules("add", {equalTo: "#' ~ field.vars.id ~ '_first"});' }}
                         }
                     }
                 {% endautoescape %}
