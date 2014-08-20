@@ -7,9 +7,9 @@ class RegexRule
     public function getJSRule($constraint)
     {
         $rule = array(
-            'pattern' => $constraint->pattern,
-            'messages' => array(
-                'pattern' => $constraint->message,
+            'regex' => array(
+                'pattern' => $constraint->pattern,
+                'message' =>  $constraint->message,
             )
         );
         

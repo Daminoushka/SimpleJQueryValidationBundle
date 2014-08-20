@@ -32,6 +32,15 @@ $.validator.addMethod('equalToValue', function(value, element, params) {
 	return value == params['compared_value'];
 });
 
+$.validator.addMethod('regex', function(value, element, params) {
+        $.validator.messages.regex = params['message'];
+        
+        var reg = new RegExp('^\\\/(.+)\\\/$', 'g');
+        var re = new RegExp(reg.exec(params['regex']);
+        
+        return re.test(value);
+})
+
 $(document).ready(function() {
     var formId = '{{ form.vars.id }}';
     var form = $('#' + formId);
